@@ -1,28 +1,28 @@
 {
-  "servers_in_corpus": 12,
-  "servers_scanned": 12,
+  "servers_in_corpus": 15,
+  "servers_scanned": 15,
   "servers_failed": 0,
-  "total_findings": 91,
-  "servers_at_risk": 10,
-  "pct_at_risk": 83,
+  "total_findings": 103,
+  "servers_at_risk": 13,
+  "pct_at_risk": 87,
   "findings_by_severity": {
     "critical": 0,
-    "high": 2,
-    "medium": 40,
-    "low": 3,
-    "info": 46
+    "high": 4,
+    "medium": 47,
+    "low": 5,
+    "info": 47
   },
   "servers_with_severity": {
     "critical": 0,
-    "high": 2,
-    "medium": 10,
-    "low": 3,
-    "info": 10
+    "high": 4,
+    "medium": 13,
+    "low": 5,
+    "info": 11
   },
   "findings_by_category": {
-    "loose-schema": 46,
-    "unconstrained-input": 25,
-    "dangerous-capability": 17,
-    "oversized-description": 3
+    "loose-schema": 47,
+    "unconstrained-input": 32,
+    "dangerous-capability": 19,
+    "oversized-description": 5
   }
 }

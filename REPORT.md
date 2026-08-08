@@ -1,10 +1,10 @@
-# State of MCP Security — Round 2
+# State of MCP Security — Round 3
 
-*A reproducible security audit of Model Context Protocol servers. Round 2 covers the
-official MCP reference servers plus eight popular hosted servers (N = 12).*
+*A reproducible security audit of Model Context Protocol servers. Round 3 covers the
+official MCP reference servers plus eleven popular hosted servers (N = 15).*
 
-> **TL;DR** — We scanned **12 MCP servers** with [mcpscan](https://github.com/nadirzhon/mcpscan).
-> **10 of 12 (83%)** exposed at least one medium-or-higher hardening issue to connecting AI agents.
+> **TL;DR** — We scanned **15 MCP servers** with [mcpscan](https://github.com/nadirzhon/mcpscan).
+> **13 of 15 (87%)** exposed at least one medium-or-higher hardening issue to connecting AI agents.
 > The dominant patterns are **unconstrained free-text inputs** (path/command/url params with no
 > validation) and **dangerous capabilities exposed without guardrails**. Findings are heuristic
 > hardening observations, not confirmed exploits.
@@ -25,28 +25,30 @@ boundary — and today almost nobody measures it. This is an ongoing, reproducib
 
 | Metric | Value |
 |---|---|
-| Servers scanned | **12 / 12** (0 failed) |
-| Total findings | **91** |
-| Servers with a medium-or-higher finding | **10 (83%)** |
-| Severity spread | 2 high · 40 medium · 3 low · 46 info |
-| Most common issue | `loose-schema` (46) → `unconstrained-input` (25) → `dangerous-capability` (17) |
+| Servers scanned | **15 / 15** (0 failed) |
+| Total findings | **103** |
+| Servers with a medium-or-higher finding | **13 (87%)** |
+| Severity spread | 4 high · 47 medium · 5 low · 47 info |
+| Most common issue | `loose-schema` (47) → `unconstrained-input` (32) → `dangerous-capability` (19) |
 
 ## What we found (the systemic patterns)
 
-1. **Unconstrained inputs are everywhere (25 findings).** Free-text `path`, `command`, `url`,
+1. **Unconstrained inputs are everywhere (32 findings).** Free-text `path`, `command`, `url`,
    and `query` parameters with no `enum`/`pattern`/`format` are the norm, not the exception. On a
    filesystem server, *every* path parameter is a traversal surface an injected instruction can aim at.
-2. **Schemas rarely lock down inputs (46 findings, `info`).** Most tools omit
+2. **Schemas rarely lock down inputs (47 findings, `info`).** Most tools omit
    `additionalProperties: false`, so unexpected fields pass through. Low-severity hygiene, but
    pervasive — even in the reference implementations.
-3. **Dangerous capabilities ship without guardrails (17 findings).** File write/delete, network
+3. **Dangerous capabilities ship without guardrails (19 findings).** File write/delete, network
    egress, and command-execution-shaped tools are commonly exposed with no authorization or
    confirmation signal in the definition. In an agent, a prompt-injected instruction can reach them.
-4. **Two hosted servers tripped high-severity multi-capability heuristics** (a filesystem-style
-   tool and a docs-search tool matching multiple dangerous-capability patterns at once). Both look
-   like **false positives on broad tools**, not confirmed vulnerabilities — exactly the case the
-   scanner is designed to *surface for review*, not to headline. They are set aside for manual
-   verification and, if anything holds up, private vendor notification (see Ethics).
+4. **Four hosted servers tripped high-severity multi-capability heuristics.** All four look like
+   **false positives on broad tools** — mostly docs/search tools whose names or descriptions
+   contain "filesystem"/"code" and trip several capability patterns at once — not confirmed
+   vulnerabilities. This is exactly what the scanner is meant to *surface for review*, not headline.
+   They are set aside for manual verification and, if anything holds up, private vendor
+   notification (see Ethics). That heuristics over-fire on broad tool descriptions is itself a
+   finding: verbose, capability-laden descriptions make a server harder to reason about safely.
 
 ## The corpus
 
@@ -63,10 +65,10 @@ The official Python servers (`fetch`, `git`, `time`) were **excluded** due to a 
 packaging incompatibility, not scanned — not a finding.
 
 **Popular hosted servers** (HTTP, connected read-only; **presented in aggregate only** per the
-ethics policy below): eight widely-used hosted MCP servers — spanning major cloud, developer-docs,
-search, and AI vendors — contributed **41 findings**, ranging from clean (schema hygiene only) to
-the two high-severity heuristic flags noted above. Per-server detail is withheld; anonymized
-counts are in [`data/hosted-aggregate.json`](data/hosted-aggregate.json).
+ethics policy below): eleven widely-used hosted MCP servers — spanning major cloud, developer-docs,
+search/RAG, vector-DB, and AI vendors — contributed **53 findings**, ranging from clean (schema
+hygiene only) to the four high-severity heuristic flags noted above. Per-server detail is withheld;
+anonymized counts are in [`data/hosted-aggregate.json`](data/hosted-aggregate.json).
 
 ## Methodology
 
@@ -79,7 +81,7 @@ counts are in [`data/hosted-aggregate.json`](data/hosted-aggregate.json).
   [`data/hosted-aggregate.json`](data/hosted-aggregate.json); aggregate stats in
   [`data/summary.json`](data/summary.json).
 - **Heuristic, by design.** Findings are pattern-based hardening observations, not verified
-  vulnerabilities. The two highs above are illustrative false positives.
+  vulnerabilities. The four highs above are illustrative false positives.
 
 ## Ethics & responsible disclosure
 
@@ -87,37 +89,38 @@ counts are in [`data/hosted-aggregate.json`](data/hosted-aggregate.json).
 - **Official reference servers are named** — public reference code; these are design-hardening
   observations on published examples, not vulnerability disclosures.
 - **Hosted third-party services are aggregated and anonymized.** No specific finding is published
-  against a named vendor. The high-severity heuristic flags are verified manually and, if anything
+  against a named vendor. High-severity heuristic flags are verified manually and, if anything
   holds up, reported privately to the vendor first — never published as name-and-shame.
 - **Detect, not exploit.** Nothing here is a working exploit or an invitation to attack anyone.
 
 ## Round-over-round
 
-| | Round 1 | Round 2 |
-|---|---|---|
-| Servers | 8 | **12** |
-| Findings | 71 | **91** |
-| % with medium+ | 75% | **83%** |
-| High-severity flags | 1 | **2** |
+| | Round 1 | Round 2 | Round 3 |
+|---|---|---|---|
+| Servers | 8 | 12 | **15** |
+| Findings | 71 | 91 | **103** |
+| % with medium+ | 75% | 83% | **87%** |
+| High-severity flags | 1 | 2 | **4** |
+
+The trend holds as the corpus grows: the large majority of MCP servers expose unconstrained
+inputs and unguarded capabilities to the agents that connect to them.
 
 ## Limitations
 
 - **Still a baseline, not a census.** The value is that it is *reproducible and extensible*.
 - **Heuristic checks** over-report hygiene (`loose-schema`) and can false-positive on broad tools
-  (both highs are such cases pending review).
+  (all four highs are such cases pending review).
 - **stdio servers require executing their code**, so stdio scans are limited to trusted official
-  servers; third-party servers are scanned over HTTP only.
+  servers; third-party servers are scanned over HTTP only. **Public no-auth HTTP servers are
+  scarce** (most production servers require OAuth), which bounds the hosted corpus.
 
-## Help expand Round 3
+## Help expand Round 4
 
 Run any MCP server and open a PR with the result, or just share the endpoint:
 
 ```bash
 uvx --from git+https://github.com/nadirzhon/mcpscan mcpscan "<your MCP server>" --json
 ```
-
-Round 3 targets a larger corpus of **hosted** servers (safe to scan without running untrusted
-code) and per-category trend lines over time.
 
 ---
 

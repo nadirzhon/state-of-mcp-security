@@ -41,6 +41,25 @@
     "vendor": "hosted (anonymized)",
     "transport": "http",
     "ok": true,
+    "total_findings": 2,
+    "by_severity": {
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "low": 0,
+      "info": 1
+    },
+    "by_category": {
+      "unconstrained-input": 1,
+      "loose-schema": 1
+    },
+    "note": "per-finding detail withheld pending coordinated disclosure"
+  },
+  {
+    "id": "hosted-4",
+    "vendor": "hosted (anonymized)",
+    "transport": "http",
+    "ok": true,
     "total_findings": 3,
     "by_severity": {
       "critical": 0,
@@ -55,7 +74,7 @@
     "note": "per-finding detail withheld pending coordinated disclosure"
   },
   {
-    "id": "hosted-4",
+    "id": "hosted-5",
     "vendor": "hosted (anonymized)",
     "transport": "http",
     "ok": true,
@@ -74,7 +93,47 @@
     "note": "per-finding detail withheld pending coordinated disclosure"
   },
   {
-    "id": "hosted-5",
+    "id": "hosted-6",
+    "vendor": "hosted (anonymized)",
+    "transport": "http",
+    "ok": true,
+    "total_findings": 5,
+    "by_severity": {
+      "critical": 0,
+      "high": 1,
+      "medium": 3,
+      "low": 1,
+      "info": 0
+    },
+    "by_category": {
+      "dangerous-capability": 1,
+      "unconstrained-input": 3,
+      "oversized-description": 1
+    },
+    "note": "per-finding detail withheld pending coordinated disclosure"
+  },
+  {
+    "id": "hosted-7",
+    "vendor": "hosted (anonymized)",
+    "transport": "http",
+    "ok": true,
+    "total_findings": 5,
+    "by_severity": {
+      "critical": 0,
+      "high": 1,
+      "medium": 3,
+      "low": 1,
+      "info": 0
+    },
+    "by_category": {
+      "dangerous-capability": 1,
+      "unconstrained-input": 3,
+      "oversized-description": 1
+    },
+    "note": "per-finding detail withheld pending coordinated disclosure"
+  },
+  {
+    "id": "hosted-8",
     "vendor": "hosted (anonymized)",
     "transport": "http",
     "ok": true,
@@ -95,7 +154,7 @@
     "note": "per-finding detail withheld pending coordinated disclosure"
   },
   {
-    "id": "hosted-6",
+    "id": "hosted-9",
     "vendor": "hosted (anonymized)",
     "transport": "http",
     "ok": true,
@@ -116,7 +175,7 @@
     "note": "per-finding detail withheld pending coordinated disclosure"
   },
   {
-    "id": "hosted-7",
+    "id": "hosted-10",
     "vendor": "hosted (anonymized)",
     "transport": "http",
     "ok": true,
@@ -136,7 +195,7 @@
     "note": "per-finding detail withheld pending coordinated disclosure"
   },
   {
-    "id": "hosted-8",
+    "id": "hosted-11",
     "vendor": "hosted (anonymized)",
     "transport": "http",
     "ok": true,

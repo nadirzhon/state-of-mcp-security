@@ -1,0 +1,28 @@
+{
+  "servers_in_corpus": 8,
+  "servers_scanned": 8,
+  "servers_failed": 0,
+  "total_findings": 71,
+  "servers_at_risk": 6,
+  "pct_at_risk": 75,
+  "findings_by_severity": {
+    "critical": 0,
+    "high": 1,
+    "medium": 28,
+    "low": 3,
+    "info": 39
+  },
+  "servers_with_severity": {
+    "critical": 0,
+    "high": 1,
+    "medium": 6,
+    "low": 3,
+    "info": 7
+  },
+  "findings_by_category": {
+    "loose-schema": 39,
+    "unconstrained-input": 18,
+    "dangerous-capability": 11,
+    "oversized-description": 3
+  }
+}

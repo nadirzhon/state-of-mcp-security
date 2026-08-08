@@ -1,0 +1,534 @@
+[
+  {
+    "id": "filesystem",
+    "vendor": "modelcontextprotocol",
+    "transport": "stdio",
+    "ok": true,
+    "total_findings": 25,
+    "by_severity": {
+      "critical": 0,
+      "high": 0,
+      "medium": 12,
+      "low": 0,
+      "info": 13
+    },
+    "by_category": {
+      "unconstrained-input": 11,
+      "dangerous-capability": 1,
+      "loose-schema": 13
+    },
+    "findings": [
+      {
+        "severity": "medium",
+        "category": "unconstrained-input",
+        "target": "create_directory",
+        "title": "Unconstrained `path` parameter on `create_directory`",
+        "description": "`path` is a free-form string with no enum/pattern/format — a natural injection or traversal surface (paths, commands, URLs, queries).",
+        "recommendation": "Constrain `path` with a pattern/enum, or validate and sandbox it server-side.",
+        "source": "static"
+      },
+      {
+        "severity": "medium",
+        "category": "unconstrained-input",
+        "target": "directory_tree",
+        "title": "Unconstrained `path` parameter on `directory_tree`",
+        "description": "`path` is a free-form string with no enum/pattern/format — a natural injection or traversal surface (paths, commands, URLs, queries).",
+        "recommendation": "Constrain `path` with a pattern/enum, or validate and sandbox it server-side.",
+        "source": "static"
+      },
+      {
+        "severity": "medium",
+        "category": "unconstrained-input",
+        "target": "edit_file",
+        "title": "Unconstrained `path` parameter on `edit_file`",
+        "description": "`path` is a free-form string with no enum/pattern/format — a natural injection or traversal surface (paths, commands, URLs, queries).",
+        "recommendation": "Constrain `path` with a pattern/enum, or validate and sandbox it server-side.",
+        "source": "static"
+      },
+      {
+        "severity": "medium",
+        "category": "unconstrained-input",
+        "target": "get_file_info",
+        "title": "Unconstrained `path` parameter on `get_file_info`",
+        "description": "`path` is a free-form string with no enum/pattern/format — a natural injection or traversal surface (paths, commands, URLs, queries).",
+        "recommendation": "Constrain `path` with a pattern/enum, or validate and sandbox it server-side.",
+        "source": "static"
+      },
+      {
+        "severity": "medium",
+        "category": "unconstrained-input",
+        "target": "list_directory",
+        "title": "Unconstrained `path` parameter on `list_directory`",
+        "description": "`path` is a free-form string with no enum/pattern/format — a natural injection or traversal surface (paths, commands, URLs, queries).",
+        "recommendation": "Constrain `path` with a pattern/enum, or validate and sandbox it server-side.",
+        "source": "static"
+      },
+      {
+        "severity": "medium",
+        "category": "unconstrained-input",
+        "target": "list_directory_with_sizes",
+        "title": "Unconstrained `path` parameter on `list_directory_with_sizes`",
+        "description": "`path` is a free-form string with no enum/pattern/format — a natural injection or traversal surface (paths, commands, URLs, queries).",
+        "recommendation": "Constrain `path` with a pattern/enum, or validate and sandbox it server-side.",
+        "source": "static"
+      },
+      {
+        "severity": "medium",
+        "category": "unconstrained-input",
+        "target": "read_file",
+        "title": "Unconstrained `path` parameter on `read_file`",
+        "description": "`path` is a free-form string with no enum/pattern/format — a natural injection or traversal surface (paths, commands, URLs, queries).",
+        "recommendation": "Constrain `path` with a pattern/enum, or validate and sandbox it server-side.",
+        "source": "static"
+      },
+      {
+        "severity": "medium",
+        "category": "unconstrained-input",
+        "target": "read_media_file",
+        "title": "Unconstrained `path` parameter on `read_media_file`",
+        "description": "`path` is a free-form string with no enum/pattern/format — a natural injection or traversal surface (paths, commands, URLs, queries).",
+        "recommendation": "Constrain `path` with a pattern/enum, or validate and sandbox it server-side.",
+        "source": "static"
+      },
+      {
+        "severity": "medium",
+        "category": "unconstrained-input",
+        "target": "read_text_file",
+        "title": "Unconstrained `path` parameter on `read_text_file`",
+        "description": "`path` is a free-form string with no enum/pattern/format — a natural injection or traversal surface (paths, commands, URLs, queries).",
+        "recommendation": "Constrain `path` with a pattern/enum, or validate and sandbox it server-side.",
+        "source": "static"
+      },
+      {
+        "severity": "medium",
+        "category": "unconstrained-input",
+        "target": "search_files",
+        "title": "Unconstrained `path` parameter on `search_files`",
+        "description": "`path` is a free-form string with no enum/pattern/format — a natural injection or traversal surface (paths, commands, URLs, queries).",
+        "recommendation": "Constrain `path` with a pattern/enum, or validate and sandbox it server-side.",
+        "source": "static"
+      },
+      {
+        "severity": "medium",
+        "category": "dangerous-capability",
+        "target": "write_file",
+        "title": "Powerful capability exposed: file-write-delete",
+        "description": "Tool `write_file` appears to offer file-write-delete. In an agent, a prompt-injected instruction could invoke it against the operator's intent.",
+        "recommendation": "Gate this tool behind an authorization scope or human confirmation; constrain its inputs.",
+        "source": "static"
+      },
+      {
+        "severity": "medium",
+        "category": "unconstrained-input",
+        "target": "write_file",
+        "title": "Unconstrained `path` parameter on `write_file`",
+        "description": "`path` is a free-form string with no enum/pattern/format — a natural injection or traversal surface (paths, commands, URLs, queries).",
+        "recommendation": "Constrain `path` with a pattern/enum, or validate and sandbox it server-side.",
+        "source": "static"
+      },
+      {
+        "severity": "info",
+        "category": "loose-schema",
+        "target": "create_directory",
+        "title": "Tool `create_directory` input schema allows arbitrary extra properties",
+        "description": "The input schema does not set additionalProperties:false, so unexpected fields pass through.",
+        "recommendation": "Set additionalProperties:false and mark required fields.",
+        "source": "static"
+      },
+      {
+        "severity": "info",
+        "category": "loose-schema",
+        "target": "directory_tree",
+        "title": "Tool `directory_tree` input schema allows arbitrary extra properties",
+        "description": "The input schema does not set additionalProperties:false, so unexpected fields pass through.",
+        "recommendation": "Set additionalProperties:false and mark required fields.",
+        "source": "static"
+      },
+      {
+        "severity": "info",
+        "category": "loose-schema",
+        "target": "edit_file",
+        "title": "Tool `edit_file` input schema allows arbitrary extra properties",
+        "description": "The input schema does not set additionalProperties:false, so unexpected fields pass through.",
+        "recommendation": "Set additionalProperties:false and mark required fields.",
+        "source": "static"
+      },
+      {
+        "severity": "info",
+        "category": "loose-schema",
+        "target": "get_file_info",
+        "title": "Tool `get_file_info` input schema allows arbitrary extra properties",
+        "description": "The input schema does not set additionalProperties:false, so unexpected fields pass through.",
+        "recommendation": "Set additionalProperties:false and mark required fields.",
+        "source": "static"
+      },
+      {
+        "severity": "info",
+        "category": "loose-schema",
+        "target": "list_directory",
+        "title": "Tool `list_directory` input schema allows arbitrary extra properties",
+        "description": "The input schema does not set additionalProperties:false, so unexpected fields pass through.",
+        "recommendation": "Set additionalProperties:false and mark required fields.",
+        "source": "static"
+      },
+      {
+        "severity": "info",
+        "category": "loose-schema",
+        "target": "list_directory_with_sizes",
+        "title": "Tool `list_directory_with_sizes` input schema allows arbitrary extra properties",
+        "description": "The input schema does not set additionalProperties:false, so unexpected fields pass through.",
+        "recommendation": "Set additionalProperties:false and mark required fields.",
+        "source": "static"
+      },
+      {
+        "severity": "info",
+        "category": "loose-schema",
+        "target": "move_file",
+        "title": "Tool `move_file` input schema allows arbitrary extra properties",
+        "description": "The input schema does not set additionalProperties:false, so unexpected fields pass through.",
+        "recommendation": "Set additionalProperties:false and mark required fields.",
+        "source": "static"
+      },
+      {
+        "severity": "info",
+        "category": "loose-schema",
+        "target": "read_file",
+        "title": "Tool `read_file` input schema allows arbitrary extra properties",
+        "description": "The input schema does not set additionalProperties:false, so unexpected fields pass through.",
+        "recommendation": "Set additionalProperties:false and mark required fields.",
+        "source": "static"
+      },
+      {
+        "severity": "info",
+        "category": "loose-schema",
+        "target": "read_media_file",
+        "title": "Tool `read_media_file` input schema allows arbitrary extra properties",
+        "description": "The input schema does not set additionalProperties:false, so unexpected fields pass through.",
+        "recommendation": "Set additionalProperties:false and mark required fields.",
+        "source": "static"
+      },
+      {
+        "severity": "info",
+        "category": "loose-schema",
+        "target": "read_multiple_files",
+        "title": "Tool `read_multiple_files` input schema allows arbitrary extra properties",
+        "description": "The input schema does not set additionalProperties:false, so unexpected fields pass through.",
+        "recommendation": "Set additionalProperties:false and mark required fields.",
+        "source": "static"
+      },
+      {
+        "severity": "info",
+        "category": "loose-schema",
+        "target": "read_text_file",
+        "title": "Tool `read_text_file` input schema allows arbitrary extra properties",
+        "description": "The input schema does not set additionalProperties:false, so unexpected fields pass through.",
+        "recommendation": "Set additionalProperties:false and mark required fields.",
+        "source": "static"
+      },
+      {
+        "severity": "info",
+        "category": "loose-schema",
+        "target": "search_files",
+        "title": "Tool `search_files` input schema allows arbitrary extra properties",
+        "description": "The input schema does not set additionalProperties:false, so unexpected fields pass through.",
+        "recommendation": "Set additionalProperties:false and mark required fields.",
+        "source": "static"
+      },
+      {
+        "severity": "info",
+        "category": "loose-schema",
+        "target": "write_file",
+        "title": "Tool `write_file` input schema allows arbitrary extra properties",
+        "description": "The input schema does not set additionalProperties:false, so unexpected fields pass through.",
+        "recommendation": "Set additionalProperties:false and mark required fields.",
+        "source": "static"
+      }
+    ]
+  },
+  {
+    "id": "everything",
+    "vendor": "modelcontextprotocol",
+    "transport": "stdio",
+    "ok": true,
+    "total_findings": 11,
+    "by_severity": {
+      "critical": 0,
+      "high": 0,
+      "medium": 2,
+      "low": 0,
+      "info": 9
+    },
+    "by_category": {
+      "dangerous-capability": 2,
+      "loose-schema": 9
+    },
+    "findings": [
+      {
+        "severity": "medium",
+        "category": "dangerous-capability",
+        "target": "gzip-file-as-resource",
+        "title": "Powerful capability exposed: network-egress",
+        "description": "Tool `gzip-file-as-resource` appears to offer network-egress. In an agent, a prompt-injected instruction could invoke it against the operator's intent.",
+        "recommendation": "Gate this tool behind an authorization scope or human confirmation; constrain its inputs.",
+        "source": "static"
+      },
+      {
+        "severity": "medium",
+        "category": "dangerous-capability",
+        "target": "simulate-research-query",
+        "title": "Powerful capability exposed: network-egress",
+        "description": "Tool `simulate-research-query` appears to offer network-egress. In an agent, a prompt-injected instruction could invoke it against the operator's intent.",
+        "recommendation": "Gate this tool behind an authorization scope or human confirmation; constrain its inputs.",
+        "source": "static"
+      },
+      {
+        "severity": "info",
+        "category": "loose-schema",
+        "target": "echo",
+        "title": "Tool `echo` input schema allows arbitrary extra properties",
+        "description": "The input schema does not set additionalProperties:false, so unexpected fields pass through.",
+        "recommendation": "Set additionalProperties:false and mark required fields.",
+        "source": "static"
+      },
+      {
+        "severity": "info",
+        "category": "loose-schema",
+        "target": "get-annotated-message",
+        "title": "Tool `get-annotated-message` input schema allows arbitrary extra properties",
+        "description": "The input schema does not set additionalProperties:false, so unexpected fields pass through.",
+        "recommendation": "Set additionalProperties:false and mark required fields.",
+        "source": "static"
+      },
+      {
+        "severity": "info",
+        "category": "loose-schema",
+        "target": "get-resource-links",
+        "title": "Tool `get-resource-links` input schema allows arbitrary extra properties",
+        "description": "The input schema does not set additionalProperties:false, so unexpected fields pass through.",
+        "recommendation": "Set additionalProperties:false and mark required fields.",
+        "source": "static"
+      },
+      {
+        "severity": "info",
+        "category": "loose-schema",
+        "target": "get-resource-reference",
+        "title": "Tool `get-resource-reference` input schema allows arbitrary extra properties",
+        "description": "The input schema does not set additionalProperties:false, so unexpected fields pass through.",
+        "recommendation": "Set additionalProperties:false and mark required fields.",
+        "source": "static"
+      },
+      {
+        "severity": "info",
+        "category": "loose-schema",
+        "target": "get-structured-content",
+        "title": "Tool `get-structured-content` input schema allows arbitrary extra properties",
+        "description": "The input schema does not set additionalProperties:false, so unexpected fields pass through.",
+        "recommendation": "Set additionalProperties:false and mark required fields.",
+        "source": "static"
+      },
+      {
+        "severity": "info",
+        "category": "loose-schema",
+        "target": "get-sum",
+        "title": "Tool `get-sum` input schema allows arbitrary extra properties",
+        "description": "The input schema does not set additionalProperties:false, so unexpected fields pass through.",
+        "recommendation": "Set additionalProperties:false and mark required fields.",
+        "source": "static"
+      },
+      {
+        "severity": "info",
+        "category": "loose-schema",
+        "target": "gzip-file-as-resource",
+        "title": "Tool `gzip-file-as-resource` input schema allows arbitrary extra properties",
+        "description": "The input schema does not set additionalProperties:false, so unexpected fields pass through.",
+        "recommendation": "Set additionalProperties:false and mark required fields.",
+        "source": "static"
+      },
+      {
+        "severity": "info",
+        "category": "loose-schema",
+        "target": "simulate-research-query",
+        "title": "Tool `simulate-research-query` input schema allows arbitrary extra properties",
+        "description": "The input schema does not set additionalProperties:false, so unexpected fields pass through.",
+        "recommendation": "Set additionalProperties:false and mark required fields.",
+        "source": "static"
+      },
+      {
+        "severity": "info",
+        "category": "loose-schema",
+        "target": "trigger-long-running-operation",
+        "title": "Tool `trigger-long-running-operation` input schema allows arbitrary extra properties",
+        "description": "The input schema does not set additionalProperties:false, so unexpected fields pass through.",
+        "recommendation": "Set additionalProperties:false and mark required fields.",
+        "source": "static"
+      }
+    ]
+  },
+  {
+    "id": "memory",
+    "vendor": "modelcontextprotocol",
+    "transport": "stdio",
+    "ok": true,
+    "total_findings": 12,
+    "by_severity": {
+      "critical": 0,
+      "high": 0,
+      "medium": 4,
+      "low": 0,
+      "info": 8
+    },
+    "by_category": {
+      "dangerous-capability": 3,
+      "unconstrained-input": 1,
+      "loose-schema": 8
+    },
+    "findings": [
+      {
+        "severity": "medium",
+        "category": "dangerous-capability",
+        "target": "delete_entities",
+        "title": "Powerful capability exposed: file-write-delete",
+        "description": "Tool `delete_entities` appears to offer file-write-delete. In an agent, a prompt-injected instruction could invoke it against the operator's intent.",
+        "recommendation": "Gate this tool behind an authorization scope or human confirmation; constrain its inputs.",
+        "source": "static"
+      },
+      {
+        "severity": "medium",
+        "category": "dangerous-capability",
+        "target": "delete_observations",
+        "title": "Powerful capability exposed: file-write-delete",
+        "description": "Tool `delete_observations` appears to offer file-write-delete. In an agent, a prompt-injected instruction could invoke it against the operator's intent.",
+        "recommendation": "Gate this tool behind an authorization scope or human confirmation; constrain its inputs.",
+        "source": "static"
+      },
+      {
+        "severity": "medium",
+        "category": "dangerous-capability",
+        "target": "delete_relations",
+        "title": "Powerful capability exposed: file-write-delete",
+        "description": "Tool `delete_relations` appears to offer file-write-delete. In an agent, a prompt-injected instruction could invoke it against the operator's intent.",
+        "recommendation": "Gate this tool behind an authorization scope or human confirmation; constrain its inputs.",
+        "source": "static"
+      },
+      {
+        "severity": "medium",
+        "category": "unconstrained-input",
+        "target": "search_nodes",
+        "title": "Unconstrained `query` parameter on `search_nodes`",
+        "description": "`query` is a free-form string with no enum/pattern/format — a natural injection or traversal surface (paths, commands, URLs, queries).",
+        "recommendation": "Constrain `query` with a pattern/enum, or validate and sandbox it server-side.",
+        "source": "static"
+      },
+      {
+        "severity": "info",
+        "category": "loose-schema",
+        "target": "add_observations",
+        "title": "Tool `add_observations` input schema allows arbitrary extra properties",
+        "description": "The input schema does not set additionalProperties:false, so unexpected fields pass through.",
+        "recommendation": "Set additionalProperties:false and mark required fields.",
+        "source": "static"
+      },
+      {
+        "severity": "info",
+        "category": "loose-schema",
+        "target": "create_entities",
+        "title": "Tool `create_entities` input schema allows arbitrary extra properties",
+        "description": "The input schema does not set additionalProperties:false, so unexpected fields pass through.",
+        "recommendation": "Set additionalProperties:false and mark required fields.",
+        "source": "static"
+      },
+      {
+        "severity": "info",
+        "category": "loose-schema",
+        "target": "create_relations",
+        "title": "Tool `create_relations` input schema allows arbitrary extra properties",
+        "description": "The input schema does not set additionalProperties:false, so unexpected fields pass through.",
+        "recommendation": "Set additionalProperties:false and mark required fields.",
+        "source": "static"
+      },
+      {
+        "severity": "info",
+        "category": "loose-schema",
+        "target": "delete_entities",
+        "title": "Tool `delete_entities` input schema allows arbitrary extra properties",
+        "description": "The input schema does not set additionalProperties:false, so unexpected fields pass through.",
+        "recommendation": "Set additionalProperties:false and mark required fields.",
+        "source": "static"
+      },
+      {
+        "severity": "info",
+        "category": "loose-schema",
+        "target": "delete_observations",
+        "title": "Tool `delete_observations` input schema allows arbitrary extra properties",
+        "description": "The input schema does not set additionalProperties:false, so unexpected fields pass through.",
+        "recommendation": "Set additionalProperties:false and mark required fields.",
+        "source": "static"
+      },
+      {
+        "severity": "info",
+        "category": "loose-schema",
+        "target": "delete_relations",
+        "title": "Tool `delete_relations` input schema allows arbitrary extra properties",
+        "description": "The input schema does not set additionalProperties:false, so unexpected fields pass through.",
+        "recommendation": "Set additionalProperties:false and mark required fields.",
+        "source": "static"
+      },
+      {
+        "severity": "info",
+        "category": "loose-schema",
+        "target": "open_nodes",
+        "title": "Tool `open_nodes` input schema allows arbitrary extra properties",
+        "description": "The input schema does not set additionalProperties:false, so unexpected fields pass through.",
+        "recommendation": "Set additionalProperties:false and mark required fields.",
+        "source": "static"
+      },
+      {
+        "severity": "info",
+        "category": "loose-schema",
+        "target": "search_nodes",
+        "title": "Tool `search_nodes` input schema allows arbitrary extra properties",
+        "description": "The input schema does not set additionalProperties:false, so unexpected fields pass through.",
+        "recommendation": "Set additionalProperties:false and mark required fields.",
+        "source": "static"
+      }
+    ]
+  },
+  {
+    "id": "sequential-thinking",
+    "vendor": "modelcontextprotocol",
+    "transport": "stdio",
+    "ok": true,
+    "total_findings": 2,
+    "by_severity": {
+      "critical": 0,
+      "high": 0,
+      "medium": 0,
+      "low": 1,
+      "info": 1
+    },
+    "by_category": {
+      "oversized-description": 1,
+      "loose-schema": 1
+    },
+    "findings": [
+      {
+        "severity": "low",
+        "category": "oversized-description",
+        "target": "sequentialthinking",
+        "title": "Unusually long tool description (2781 chars)",
+        "description": "The tool `sequentialthinking` has a very long description, which can hide injected instructions and bloats the agent's context.",
+        "recommendation": "Keep descriptions concise; move detail to documentation.",
+        "source": "static"
+      },
+      {
+        "severity": "info",
+        "category": "loose-schema",
+        "target": "sequentialthinking",
+        "title": "Tool `sequentialthinking` input schema allows arbitrary extra properties",
+        "description": "The input schema does not set additionalProperties:false, so unexpected fields pass through.",
+        "recommendation": "Set additionalProperties:false and mark required fields.",
+        "source": "static"
+      }
+    ]
+  }
+]

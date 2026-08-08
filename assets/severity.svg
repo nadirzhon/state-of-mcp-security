@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="222" viewBox="0 0 640 222" font-family="ui-monospace,SFMono-Regular,Menlo,monospace">
+<rect width="640" height="222" rx="10" fill="#0d1014"/>
+<text x="20" y="32" fill="#e6eaf0" font-size="15" font-weight="700">Findings by severity (71 total, 8 servers)</text>
+<text x="20" y="70" fill="#9aa6b4" font-size="12">critical</text>
+<rect x="190" y="58" width="2" height="16" rx="3" fill="#e5626a"/>
+<text x="200" y="70" fill="#e6eaf0" font-size="12" font-weight="600">0</text>
+<text x="20" y="100" fill="#9aa6b4" font-size="12">high</text>
+<rect x="190" y="88" width="9" height="16" rx="3" fill="#f2a93b"/>
+<text x="207" y="100" fill="#e6eaf0" font-size="12" font-weight="600">1</text>
+<text x="20" y="130" fill="#9aa6b4" font-size="12">medium</text>
+<rect x="190" y="118" width="258" height="16" rx="3" fill="#f2c14b"/>
+<text x="456" y="130" fill="#e6eaf0" font-size="12" font-weight="600">28</text>
+<text x="20" y="160" fill="#9aa6b4" font-size="12">low</text>
+<rect x="190" y="148" width="27" height="16" rx="3" fill="#6fb6b0"/>
+<text x="225" y="160" fill="#e6eaf0" font-size="12" font-weight="600">3</text>
+<text x="20" y="190" fill="#9aa6b4" font-size="12">info</text>
+<rect x="190" y="178" width="360" height="16" rx="3" fill="#6b7787"/>
+<text x="558" y="190" fill="#e6eaf0" font-size="12" font-weight="600">39</text>
+</svg>

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "filesystem",
+    "vendor": "modelcontextprotocol",
+    "transport": "stdio",
+    "spec": "npx -y @modelcontextprotocol/server-filesystem /tmp"
+  },
+  {
+    "id": "everything",
+    "vendor": "modelcontextprotocol",
+    "transport": "stdio",
+    "spec": "npx -y @modelcontextprotocol/server-everything"
+  },
+  {
+    "id": "memory",
+    "vendor": "modelcontextprotocol",
+    "transport": "stdio",
+    "spec": "npx -y @modelcontextprotocol/server-memory"
+  },
+  {
+    "id": "sequential-thinking",
+    "vendor": "modelcontextprotocol",
+    "transport": "stdio",
+    "spec": "npx -y @modelcontextprotocol/server-sequential-thinking"
+  },
+  {
+    "id": "+ 4 hosted servers",
+    "vendor": "withheld pending disclosure",
+    "transport": "http",
+    "spec": "<hosted URLs withheld; see REPORT.md ethics>"
+  }
+]

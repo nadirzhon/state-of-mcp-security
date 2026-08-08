@@ -4,6 +4,43 @@
     "vendor": "hosted (anonymized)",
     "transport": "http",
     "ok": true,
+    "total_findings": 1,
+    "by_severity": {
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "low": 0,
+      "info": 0
+    },
+    "by_category": {
+      "unconstrained-input": 1
+    },
+    "note": "per-finding detail withheld pending coordinated disclosure"
+  },
+  {
+    "id": "hosted-2",
+    "vendor": "hosted (anonymized)",
+    "transport": "http",
+    "ok": true,
+    "total_findings": 2,
+    "by_severity": {
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "low": 0,
+      "info": 1
+    },
+    "by_category": {
+      "unconstrained-input": 1,
+      "loose-schema": 1
+    },
+    "note": "per-finding detail withheld pending coordinated disclosure"
+  },
+  {
+    "id": "hosted-3",
+    "vendor": "hosted (anonymized)",
+    "transport": "http",
+    "ok": true,
     "total_findings": 3,
     "by_severity": {
       "critical": 0,
@@ -18,7 +55,7 @@
     "note": "per-finding detail withheld pending coordinated disclosure"
   },
   {
-    "id": "hosted-2",
+    "id": "hosted-4",
     "vendor": "hosted (anonymized)",
     "transport": "http",
     "ok": true,
@@ -37,7 +74,7 @@
     "note": "per-finding detail withheld pending coordinated disclosure"
   },
   {
-    "id": "hosted-3",
+    "id": "hosted-5",
     "vendor": "hosted (anonymized)",
     "transport": "http",
     "ok": true,
@@ -58,7 +95,7 @@
     "note": "per-finding detail withheld pending coordinated disclosure"
   },
   {
-    "id": "hosted-4",
+    "id": "hosted-6",
     "vendor": "hosted (anonymized)",
     "transport": "http",
     "ok": true,
@@ -74,6 +111,46 @@
       "dangerous-capability": 2,
       "unconstrained-input": 1,
       "oversized-description": 1,
+      "loose-schema": 3
+    },
+    "note": "per-finding detail withheld pending coordinated disclosure"
+  },
+  {
+    "id": "hosted-7",
+    "vendor": "hosted (anonymized)",
+    "transport": "http",
+    "ok": true,
+    "total_findings": 8,
+    "by_severity": {
+      "critical": 0,
+      "high": 0,
+      "medium": 5,
+      "low": 0,
+      "info": 3
+    },
+    "by_category": {
+      "dangerous-capability": 3,
+      "unconstrained-input": 2,
+      "loose-schema": 3
+    },
+    "note": "per-finding detail withheld pending coordinated disclosure"
+  },
+  {
+    "id": "hosted-8",
+    "vendor": "hosted (anonymized)",
+    "transport": "http",
+    "ok": true,
+    "total_findings": 9,
+    "by_severity": {
+      "critical": 0,
+      "high": 1,
+      "medium": 5,
+      "low": 0,
+      "info": 3
+    },
+    "by_category": {
+      "dangerous-capability": 3,
+      "unconstrained-input": 3,
       "loose-schema": 3
     },
     "note": "per-finding detail withheld pending coordinated disclosure"

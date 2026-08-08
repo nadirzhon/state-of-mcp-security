@@ -4,8 +4,8 @@
 
 **A reproducible security audit of Model Context Protocol servers.**
 
-We scanned the official MCP reference servers plus four popular hosted servers.
-**75% exposed at least one medium-or-higher hardening issue** to connecting AI agents.
+We scanned the official MCP reference servers plus eight popular hosted servers (12 total).
+**83% exposed at least one medium-or-higher hardening issue** to connecting AI agents.
 
 [**📄 Read the full report →**](REPORT.md) · powered by [mcpscan](https://github.com/nadirzhon/mcpscan)
 
@@ -19,9 +19,9 @@ We scanned the official MCP reference servers plus four popular hosted servers.
 
 | | |
 |---|---|
-| Servers scanned | **8** (official reference + 4 popular hosted) |
-| Total findings | **71** |
-| Servers with a medium+ issue | **6 / 8 (75%)** |
+| Servers scanned | **12** (official reference + 8 popular hosted) |
+| Total findings | **91** |
+| Servers with a medium+ issue | **10 / 12 (83%)** |
 | Top patterns | unconstrained inputs · missing schema locks · unguarded dangerous capabilities |
 
 Full analysis, per-server breakdown, methodology, and ethics: **[REPORT.md](REPORT.md)**.

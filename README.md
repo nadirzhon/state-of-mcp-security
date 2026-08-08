@@ -54,6 +54,14 @@ Only public servers, scanned read-only, tools never invoked. Official reference 
 high-severity finding verified and disclosed privately to the vendor first — never published as a
 name-and-shame. Detect, not exploit. See [REPORT.md § Ethics](REPORT.md#ethics--responsible-disclosure).
 
+## Part of an AI × Security toolkit
+
+- [offsec-mcp](https://github.com/nadirzhon/offsec-mcp) — MCP server giving AI agents offensive-security tools (recon, CVE, JS analysis)
+- [specter](https://github.com/nadirzhon/specter) — autonomous AI recon agent that drives those tools end-to-end
+- [vigil](https://github.com/nadirzhon/vigil) — AI security review for every pull request
+- [mcpscan](https://github.com/nadirzhon/mcpscan) — security scanner for MCP servers (tool poisoning, injection surfaces)
+- **State of MCP Security** — research: 87% of scanned MCP servers expose a medium+ hardening issue · *(this repo)*
+
 ## License
 
 Code & data: MIT (see [LICENSE](LICENSE)). Findings are heuristic and may be imperfect.
